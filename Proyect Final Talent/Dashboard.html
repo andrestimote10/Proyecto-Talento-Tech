@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard - Logs SOC</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="left">
+      <img id="top-logo" src="assets/logo.png" alt="Logo cooperativa" onerror="this.style.display='none'">
+      <h2>Centro de Operaciones de Seguridad (SOC) - Simulado</h2>
+    </div>
+
+    <div class="right">
+      <span id="loggedUser">Usuario: —</span>
+      <button id="btnLogout" class="btn small">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="container dashboard">
+    <section class="card">
+      <div class="card-header">
+        <h3>Eventos / Logs</h3>
+        <div class="controls">
+          <input id="searchInput" placeholder="Buscar por dispositivo o evento..." />
+          <select id="filterDevice">
+            <option value="">Filtrar por dispositivo</option>
+            <option value="Firewall">Firewall</option>
+            <option value="VPN">VPN</option>
+            <option value="Switch">Switch</option>
+            <option value="Servidor Syslog">Servidor Syslog</option>
+          </select>
+          <button id="btnRefresh" class="btn small">Refrescar</button>
+        </div>
+      </div>
+
+      <div class="table-wrap" role="region" aria-label="Tabla de logs">
+        <table id="logsTable" class="logs-table">
+          <thead>
+            <tr>
+              <th data-key="timestamp">Fecha / Hora</th>
+              <th data-key="device">Dispositivo</th>
+              <th data-key="event">Evento</th>
+              <th data-key="source">IP Origen</th>
+              <th data-key="severity">Severidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filas generadas por JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Detalles del evento</h3>
+      <pre id="logDetail" class="log-detail">Selecciona una fila para ver el detalle...</pre>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login - SOC Simulado</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="card login-card" aria-labelledby="login-title">
+      <!-- Coloca aquí el logo de la cooperativa -->
+      <!-- Reemplaza "img/Logos Coperativa.png" por la ruta de tu logo -->
+      <div class="logo-wrap">
+        <img id="coop-logo" src="img/Logos Coperativa.png" alt="Logo de la cooperativa (coloca aquí tu imagen)" onerror="this.style.display='none'">
+      </div>
+
+      <h1 id="login-title">Acceso al SOC Simulado</h1>
+
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="username">Usuario</label>
+          <input id="username" name="username" type="text" autocomplete="username" required />
+          <div class="invalid-msg" id="u-msg" aria-live="polite"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required />
+          <div class="invalid-msg" id="p-msg" aria-live="polite"></div>
+        </div>
+
+        <div class="form-actions">
+          <button id="btnLogin" type="submit" class="btn">Iniciar sesión</button>
+        </div>
+
+        <p class="note">Cuenta demo: <strong>admin / Password123!</strong></p>
+      </form>
+
+      <footer class="small">Proyecto - SOC Simulado · Interfaz local</footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
